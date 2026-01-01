@@ -7,7 +7,6 @@ namespace DapperDemoApp.Db
         public IDbConnection Connection { get; } = default!;
         public IDbTransaction? Transaction { get;private set; }
 
-
         public DbSession(IDbConnection connection)
         {
             Connection = connection;
@@ -28,7 +27,6 @@ namespace DapperDemoApp.Db
         {
             Transaction?.Rollback();
         }
-
 
         public void Dispose()
         {
